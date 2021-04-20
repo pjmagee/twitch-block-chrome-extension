@@ -14,15 +14,6 @@
     "https://*.twitch.tv/*",
     "https://gist.githubusercontent.com/pjmagee/d8147bead8e4a651541c558d761f6103/raw/b3f5b9de1d48fbb26634213f8fc14f837fcb743d/thots.json"
   ],
-  //"action": {
-  //  "default_popup": "popup.html",
-  //  "default_icon": {
-  //    "16": "/images/get_started16.png",
-  //    "32": "/images/get_started32.png",
-  //    "48": "/images/get_started48.png",
-  //    "128": "/images/get_started128.png"
-  //  }
-  //},
   "icons": {
     "16": "/images/get_started16.png",
     "32": "/images/get_started32.png",
