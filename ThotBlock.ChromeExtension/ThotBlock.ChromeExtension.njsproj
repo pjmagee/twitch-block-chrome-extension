@@ -47,7 +47,7 @@
     <Folder Include="images\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="begon.ts" />
+    <TypeScriptCompile Include="begone.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>

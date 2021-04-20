@@ -1,16 +1,19 @@
-const thots = [
-    "krypto_nat",
-    "faith",
-    "alice_marrs",
-    "amouranth",
-    "gloriamatvien",
-    "stream_sniperka",
-    "pinkfloweremoji",
-    "loreliamia",
-    "firedancer",
-    "lina_asmr",
-    "for_line"
-];
+console.log("begone.js");
+let thots = [];
+const url = 'https://gist.githubusercontent.com/pjmagee/d8147bead8e4a651541c558d761f6103/raw/b3f5b9de1d48fbb26634213f8fc14f837fcb743d/thots.json';
+chrome.storage.local.get({ thots: [] }, (items) => {
+    if (items.thots.length === 0) {
+        console.log(`fetching thots...`);
+        fetch(url).then(response => response.text()).then(json => {
+            thots = JSON.parse(json);
+            chrome.storage.local.set({ thots: thots });
+            console.log(`thots to begon: ${thots.length}`);
+        });
+    }
+    else {
+        thots = items.thots;
+    }
+});
 const container = document.getElementsByTagName("body").item(0);
 function begon(container) {
     var _a;
@@ -23,6 +26,7 @@ function begon(container) {
             while (current.isConnected) {
                 current = current.parentElement;
                 if (current.parentElement === container) {
+                    console.log("removing streamer.");
                     current.remove();
                 }
             }
@@ -30,6 +34,7 @@ function begon(container) {
     }
 }
 function register() {
+    console.log("registering twitch containers");
     const left = document.getElementsByClassName("tw-transition-group");
     const towers = document.getElementsByClassName("tw-tower");
     const containers = [];
@@ -49,4 +54,3 @@ function register() {
 register();
 const bodyObserver = new MutationObserver(register);
 bodyObserver.observe(container, { attributes: false, childList: true, subtree: true });
-//# sourceMappingURL=begon.js.map
