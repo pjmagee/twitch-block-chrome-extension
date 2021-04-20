@@ -5,14 +5,18 @@ const thots = [
     "amouranth",
     "gloriamatvien",
     "stream_sniperka",
-    "pinkfloweremoji"
+    "pinkfloweremoji",
+    "loreliamia",
+    "firedancer",
+    "lina_asmr",
+    "for_line"
 ];
 
-const tower: Element = document.getElementsByClassName("tw-tower").item(0);
+const container: Element = document.getElementsByTagName("body").item(0);
 
-function begon(): void {
+function begon(container: Element): void {
 
-    const elements: HTMLCollectionOf<Element> = document.getElementsByClassName("tw-link");
+    const elements: HTMLCollectionOf<Element> = container.getElementsByClassName("tw-link");
 
     for (let i = 0; i < elements.length; i++) {
 
@@ -23,7 +27,7 @@ function begon(): void {
             let current: HTMLElement = anchor;
             while (current.isConnected) {
                 current = current.parentElement;
-                if (current.parentElement === tower) {
+                if (current.parentElement === container) {
                     current.remove();
                 }
             }
@@ -31,8 +35,30 @@ function begon(): void {
     }
 }
 
-const streamers = new MutationObserver(begon); // subsequent changes to the tower, we want to run the begon function
+function register(): void {
+    const left = document.getElementsByClassName("tw-transition-group");
+    const towers = document.getElementsByClassName("tw-tower");
 
-begon(); // Initial removal
+    const containers = [];
 
-streamers.observe(tower, { attributes: false, childList: true, subtree: true });
+    for (let i = 0; i < left.length; i++) {
+        containers.push(left.item(i));
+    }
+
+    for (let i = 0; i < towers.length; i++) {
+        containers.push(towers.item(i));
+    }
+
+
+    for (let i = 0; i < containers.length; i++) {
+        const container = containers[i];
+        begon(container);
+        const collectionObserver = new MutationObserver(() => begon(container));
+        collectionObserver.observe(container, { attributes: false, childList: true, subtree: true });
+    }
+}
+
+register();
+
+const bodyObserver = new MutationObserver(register);
+bodyObserver.observe(container, { attributes: false, childList: true, subtree: true });

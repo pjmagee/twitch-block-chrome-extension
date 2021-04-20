@@ -5,12 +5,16 @@ const thots = [
     "amouranth",
     "gloriamatvien",
     "stream_sniperka",
-    "pinkfloweremoji"
+    "pinkfloweremoji",
+    "loreliamia",
+    "firedancer",
+    "lina_asmr",
+    "for_line"
 ];
-const tower = document.getElementsByClassName("tw-tower").item(0);
-function begon() {
+const container = document.getElementsByTagName("body").item(0);
+function begon(container) {
     var _a;
-    const elements = document.getElementsByClassName("tw-link");
+    const elements = container.getElementsByClassName("tw-link");
     for (let i = 0; i < elements.length; i++) {
         const anchor = elements.item(i);
         const channel = (_a = anchor.getAttribute('href')) === null || _a === void 0 ? void 0 : _a.replace('/', '');
@@ -18,14 +22,31 @@ function begon() {
             let current = anchor;
             while (current.isConnected) {
                 current = current.parentElement;
-                if (current.parentElement === tower) {
+                if (current.parentElement === container) {
                     current.remove();
                 }
             }
         }
     }
 }
-const streamers = new MutationObserver(begon); // subsequent changes to the tower, we want to run the begon function
-begon(); // Initial removal
-streamers.observe(tower, { attributes: false, childList: true, subtree: true });
+function register() {
+    const left = document.getElementsByClassName("tw-transition-group");
+    const towers = document.getElementsByClassName("tw-tower");
+    const containers = [];
+    for (let i = 0; i < left.length; i++) {
+        containers.push(left.item(i));
+    }
+    for (let i = 0; i < towers.length; i++) {
+        containers.push(towers.item(i));
+    }
+    for (let i = 0; i < containers.length; i++) {
+        const container = containers[i];
+        begon(container);
+        const collectionObserver = new MutationObserver(() => begon(container));
+        collectionObserver.observe(container, { attributes: false, childList: true, subtree: true });
+    }
+}
+register();
+const bodyObserver = new MutationObserver(register);
+bodyObserver.observe(container, { attributes: false, childList: true, subtree: true });
 //# sourceMappingURL=begon.js.map
