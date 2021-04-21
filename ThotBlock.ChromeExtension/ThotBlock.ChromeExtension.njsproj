@@ -36,6 +36,9 @@
     <Content Include="images\get_started16.png" />
     <Content Include="images\get_started32.png" />
     <Content Include="images\get_started48.png" />
+    <Content Include="streamers.json">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="manifest.json" />
     <Content Include="package-lock.json" />
     <Content Include="package.json" />

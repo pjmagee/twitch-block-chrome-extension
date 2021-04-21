@@ -3,7 +3,7 @@
   "description": "Removes streamers who walk the fine line of the twitch Terms of service when it comes to sexually suggestive content or nudity.",
   "version": "1.0",
   "manifest_version": 3,
-  "permissions": [ "storage", "scripting" ],
+  "permissions": [ "storage" ],
   "content_scripts": [
     {
       "matches": [ "https://*.twitch.tv/*" ],
@@ -12,7 +12,7 @@
   ],
   "host_permissions": [
     "https://*.twitch.tv/*",
-    "https://gist.githubusercontent.com/pjmagee/d8147bead8e4a651541c558d761f6103/raw/b3f5b9de1d48fbb26634213f8fc14f837fcb743d/thots.json"
+    "https://raw.githubusercontent.com/pjmagee/thot-blocker-chrome-extension/master/ThotBlock.ChromeExtension/streamers.json"
   ],
   "icons": {
     "16": "/images/get_started16.png",
