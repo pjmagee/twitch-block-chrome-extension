@@ -1,6 +1,6 @@
 {
-  "name": "ThotBlock",
-  "description": "Removes streamers who walk the fine line of the twitch Terms of service when it comes to sexually suggestive content or nudity.",
+  "name": "TwitchBlock",
+  "description": "Remove a custom defined list of streamers from appearing on the Twitch suggested section and directory listing",
   "version": "1.0",
   "manifest_version": 3,
   "permissions": [ "storage" ],
@@ -10,9 +10,9 @@
       "js": [ "begone.js" ]
     }
   ],
+  "options_page": "options.html",
   "host_permissions": [
-    "https://*.twitch.tv/*",
-    "https://raw.githubusercontent.com/pjmagee/thot-blocker-chrome-extension/master/ThotBlock.ChromeExtension/streamers.json"
+    "https://*.twitch.tv/*"
   ],
   "icons": {
     "16": "/images/16.png",

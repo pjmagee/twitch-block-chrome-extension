@@ -1,7 +1,7 @@
 {
-  "name": "thotblock-chrome-extension",
+  "name": "twitchblock-chrome-extension",
   "version": "0.0.0",
-  "description": "Remove Thots from Twitch Directory",
+  "description": "Remove a custom defined list of streamers from appearing on the Twitch suggested section and directory listing",
   "main": "app.js",
   "author": {
     "name": "Patrick Magee"

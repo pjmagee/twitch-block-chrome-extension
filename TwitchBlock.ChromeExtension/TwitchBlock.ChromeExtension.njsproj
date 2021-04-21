@@ -2,7 +2,7 @@
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <Name>ThotBlock.ChromeExtension</Name>
+    <Name>TwitchBlock.ChromeExtension</Name>
     <RootNamespace>NodejsConsoleApp1</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
@@ -36,13 +36,10 @@
     <Content Include="images\16.png" />
     <Content Include="images\32.png" />
     <Content Include="images\48.png" />
-    <Content Include="streamers.json">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="manifest.json" />
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
-    <Content Include="popup.html" />
+    <Content Include="options.html" />
     <Content Include="README.md" />
     <Content Include="tsconfig.json" />
   </ItemGroup>
@@ -51,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="begone.ts" />
+    <TypeScriptCompile Include="options.ts" />
   </ItemGroup>
   <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsToolsV2.targets" />
   <ProjectExtensions>
