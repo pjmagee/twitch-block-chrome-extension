@@ -8,7 +8,5 @@
   "exclude": [
     "node_modules"
   ],
-  "compileOnSave": true,
-  "include": [ "manifest.json", "begone.js" ],
-  "files": [ "begone.ts" ]
+  "compileOnSave": true
 }
