@@ -32,10 +32,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="button.css" />
-    <Content Include="images\get_started128.png" />
-    <Content Include="images\get_started16.png" />
-    <Content Include="images\get_started32.png" />
-    <Content Include="images\get_started48.png" />
+    <Content Include="images\128.png" />
+    <Content Include="images\16.png" />
+    <Content Include="images\32.png" />
+    <Content Include="images\48.png" />
     <Content Include="streamers.json">
       <SubType>Code</SubType>
     </Content>
