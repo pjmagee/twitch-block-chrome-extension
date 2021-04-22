@@ -1,10 +1,11 @@
-## ThotBlocker
+## TwitchBlocker
 
-This extension REMOVES twitch streamers from the stream directory and suggested streamers list, who walk the fine line of the Twitch Terms of service for sexually suggestive content or nudity by simply removing any of the defined streamers.
-  
-These streamers generally appear in the Just Chatting category of Twitch, in the form of wearing bikinis in hot tubs, writing on their bodies for twitch subs, or laying on their bed wearing suggestive clothing.
+This extension can be used to remove twitch streamers from suggested list & channel directory.
 
-It does **not** remove the ability to access the streamers channels. It simply removes them from being displayed on the browsing pages.
+- Toxic game streamers? Add them to the list and you wont see them again!  
+- Hot tub streamers taking over Just chatting? Add them to the list and you wont see them again!
+
+It does **not** remove the ability to access the streamers channels.
 
 ### Support or Contact
 
